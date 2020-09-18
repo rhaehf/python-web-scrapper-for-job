@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Final Job Scrapper</title>
+    <style>
+      body {
+        background-color: #fff7cc;
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 190px;
+      }
+      h3 {
+        padding-left: 15px;
+      }
+      input {
+        width: 250px;
+        height: 35px;
+        border: 1px solid black;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      button {
+        width: 45px;
+        height: 38px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>💻 Find Remote Job 💻</h1>
+      <form action="/search" method="get">
+        <h3>Search by term 😎</h3>
+        <input placeholder='  i.e python' name="term" />
+        <button>🔎</button>
+      </form>
+    </div>
+  </body>
+</html>

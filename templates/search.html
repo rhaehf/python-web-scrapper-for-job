@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{searchingBy}} Search</title>
+    <style>
+      body {
+        background-color: #fff7cc;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 50px;
+      }
+      .link-container {
+        margin: 40px;        
+      }
+      .link-button{
+        margin: 20px;
+        background-color: #aeb4f2;
+        color: white;
+        font-weight: 30px;
+        width: auto;
+        height: 60px;
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+      }
+      .jobs-container {
+        display: grid;
+        gap: 15px;
+        grid-column-gap: 25px;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0px 50px;
+      }
+      .job-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        color: #a7aab1;
+        margin: 10px;
+        margin-right: 20px;
+        width: 200px;
+      }
+      h3 {
+        color: black;
+      }
+      .apply-button {
+        background-color: #ff4742;
+        color: white;
+        font-weight: 30px;
+        width: auto;
+        height: 25px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>✅ {{resultsNumber}} {{searchingBy}} Jobs</h1>
+
+    <div class="link-container">
+      <a class="link-button" href="/export?term={{searchingBy}}"><b>📁 EXPORT TO CSV</b></a>    
+      <a class="link-button" href="/"><b>🔙 Go Back To Search</b></a>
+      <br>
+    </div>  
+    <br>
+
+    <form class="jobs-container">      
+      {% for job in jobs%}
+      <div class="job-container">
+        <div class="content">
+          <span>{{job.company}}</span>
+          <h3>{{job.title}}</h3>
+        </div>      
+        <a class="apply-button" href="{{job.link}}" target="_blank"><b>Apply</b></a>
+      </div>    
+      {% endfor %}
+    </form>
+  </body>
+</html>
